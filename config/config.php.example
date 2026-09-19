@@ -1,0 +1,33 @@
+<?php
+/**
+ * /var/www/nextcloud/config/config.php — sanitized template.
+ * Copy to config.php and fill the <PLACEHOLDERS> (real values only on the server).
+ */
+$CONFIG = array (
+  'instanceid' => '<INSTANCE_ID>',
+  'passwordsalt' => '<PASSWORD_SALT>',
+  'secret' => '<SECRET>',
+  'trusted_domains' =>
+  array (
+    0 => '<RELAY_IP>',
+  ),
+  'datadirectory' => '/var/www/nextcloud/data',
+  'dbtype' => 'pgsql',
+  'version' => '32.0.3.2',
+  'overwrite.cli.url' => 'http://<RELAY_IP>',
+  'dbname' => 'nextcloud',
+  'dbhost' => 'localhost:5432',
+  'dbtableprefix' => 'oc_',
+  'dbuser' => 'nextclouduser',
+  'dbpassword' => '<DB_PASSWORD>',
+  'installed' => true,
+  'memcache.local' => '\\OC\\Memcache\\APCu',
+  'maintenance' => false,
+  'maintenance_window_start' => 1,
+
+  'memcache.locking' => '\\OC\\Memcache\\Redis',
+  'redis' => array(
+    'host' => 'localhost',
+    'port' => 6379,
+  ),
+);

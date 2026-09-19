@@ -1,0 +1,12 @@
+Patches lib/versioncheck.php so Nextcloud 32 accepts PHP 8.5 (Ubuntu 26.04 ships no older PHP; ondrej PPA has no 26.04 builds).
+
+Backup on server: /root/versioncheck.php.bak
+
+--- a/lib/versioncheck.php
++++ b/lib/versioncheck.php
+@@ -17 +17 @@
+-if (PHP_VERSION_ID >= 80500) {
++if (PHP_VERSION_ID >= 80600) {
+
+Re-apply after every Nextcloud upgrade (file gets overwritten):
+  sed -i 's/PHP_VERSION_ID >= 80500/PHP_VERSION_ID >= 80600/' /var/www/nextcloud/lib/versioncheck.php
